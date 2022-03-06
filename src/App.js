@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./ui/pages/Home";
 
 function App() {

@@ -41,17 +41,15 @@ const counterFiles = async () => {
   arrayValues.forEach((item) => {
     Object.keys(item).forEach((extensionKey) => {
       if (extensionKey in fileStructure) {
-        fileStructure[extensionKey] = ++item[extensionKey];
+        fileStructure[extensionKey] += item[extensionKey];
       } else {
         fileStructure[extensionKey] = item[extensionKey];
       }
     });
   });
-  console.log("final result es ", fileStructure);
 
   const Project =
     restoreProjectStructure(response).modFileStructure(fileStructure);
-  console.log("el project es ", Project);
 
   return Project;
 };
